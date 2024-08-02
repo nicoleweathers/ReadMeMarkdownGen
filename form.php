@@ -36,7 +36,7 @@ $tree ='
 echo 
 $form->inputTxt('Github id', 'Add your GitHub id.','ex. nweathers') .
 $form->inputTxt('Github repo', 'Add the name of your repository.', 'ex. ReadMeMarkdownGen') .
-$form->inputTxt('Project Name', 'Create a unique name for project, ', 'ex. ReadMe Markdown Gen"') .
+$form->inputTxt('Project Name', 'Create a unique name for project, ', 'ex. ReadMe Markdown Gen') .
 $form->inputTxt('Subtitle', 'Use 1 short sentence to describe what this is or what it does.' , 'ex. Time Saving Readme File Generator') .
 $form->inputArea('Key Features', 'Type or paste in key features here. Suggestion: Make a bullet list. For a bullet list, you can use MD or HTML format.', '') .
 $form->inputArea('About', 'Write in as many words as you want, all about your project _what it is, what it does, and why you created it.', '') .
@@ -51,31 +51,45 @@ $form->inputArea('Contacts', 'Provide contact information here _like your email 
 <p align="center"><button class="form-btn">Generate ReadMe Markdown</button></p>
 </form>
     </div>
+
+
+
+<script>
+const growers = document.querySelectorAll(".grow-wrap");
+
+growers.forEach((grower) => {
+    const textarea = grower.querySelector("textarea");
+    textarea.addEventListener("input", () => {
+        grower.dataset.replicatedValue = textarea.value;
+    });
+});
+</script>    
+
 <?php  
-echo 
-'<script type="text/javascript">';        
+// echo 
+// '<script type="text/javascript">';        
 
-$ids = [ "Github id", "Github repo", "Project Name", "Subtitle", "Key Features", "About", "File Tree", "How It Works", "Support, Like, Share, Donate", "Contributions", "Credits", "Related Links", "Contacts"];
+// $ids = [ "Github id", "Github repo", "Project Name", "Subtitle", "Key Features", "About", "File Tree", "How It Works", "Support, Like, Share, Donate", "Contributions", "Credits", "Related Links", "Contacts"];
 
-foreach($ids as $id)
-{
-    $id = str_replace(' ', '_', $id );
-    $id = str_replace(',', '', $id );
-    $id = strtolower($id);
+// foreach($ids as $id)
+// {
+//     $id = str_replace(' ', '_', $id );
+//     $id = str_replace(',', '', $id );
+//     $id = strtolower($id);
 
-echo'
-textarea = document.querySelector("#' . $id . '");
-textarea.addEventListener(\'input\', autoResize, false)
-';    
-} //end foreach
+// echo'
+// textarea = document.querySelector("#' . $id . '");
+// textarea.addEventListener(\'input\', autoResize, false)
+// ';    
+// } //end foreach
 
-echo'
-function autoResize() {
-this.style.height = \'auto\';
-this.style.height = this.scrollHeight + \'px\';
-}    
-</script>
- ';
+// echo'
+// function autoResize() {
+// this.style.height = \'auto\';
+// this.style.height = this.scrollHeight + \'px\';
+// }    
+// </script>
+//  ';
 ?>
 
 

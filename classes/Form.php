@@ -21,7 +21,7 @@ class Form
 '
 <label for="'. $name . '"> ' . $label . ' </label>
 <p>' . $instruct  . '</p>
-<textarea id="' . $name . '" rows="' . $rows . '" name="'. $name . '">' . $placeholder . '</textarea>
+<div class="grow-wrap"><textarea id="' . $name . '" rows="' . $rows . '" name="'. $name . '">' . $placeholder . '</textarea></div>
 ';
     } // inputArea()
 

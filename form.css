@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 * {
   margin: 0 auto;
   padding: 0;
@@ -36,11 +37,31 @@ body {
   font-family: serif;
 }
 
-.form-wrapper textarea{
-  display: block;
-  overflow: hidden;
-  resize: none;
+/** THESE SETTINGS MAKE TEXT AREA DYNAMIC WITH JS SCRIPT **/
+.grow-wrap{
+  display: grid;
 }
+
+.grow-wrap::after{
+  content: attr(data-replicated-value) " ";
+  white-space: pre-wrap;
+  visibility: hidden;
+}
+
+.grow-wrap > textarea{
+  resize: none;
+  overflow: hidden;
+}
+
+.grow-wrap > textarea, 
+.grow-wrap::after{
+  /* border: 1px solid 
+black; */
+  padding: 1rem;
+  font: inherit;
+  grid-area: 1 / 1 / 2 / 2;
+}
+/***********************************************************/
 
 .form-wrapper input, .form-wrapper textarea {
   width: 100%;
