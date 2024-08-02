@@ -1,4 +1,4 @@
-<?php include_once 'ReadMe.php'; 
+<?php include_once 'classes/ReadMe.php'; 
 
 $readme = new ReadMe();
 

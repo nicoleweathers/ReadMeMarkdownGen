@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  --blue: #0063d5;
+  --gry: #6b7280;
+  --drk-gry: #373745;
+  --off-wht: #e0e0e0;;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-wrapper {
+  max-width: 700px;
+  width: 100%;
+  color: var(--drk-gry);
+  background: #fff;
+  padding: 50px 5%;
+}
+
+.form-wrapper label {
+  margin-top: 20px;
+  display: block;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.form-wrapper p{
+  font-family: serif;
+}
+
+.form-wrapper textarea{
+  display: block;
+  overflow: hidden;
+  resize: none;
+}
+
+.form-wrapper input, .form-wrapper textarea {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  border: 1px solid var(--off-wht);
+  background: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--gry);
+  outline: none;
+}
+
+/* .pt-3 {
+  padding-top: 12px;
+}
+.form-label-2 {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 20px;
+} */
+
+.form-wrapper input:focus {
+  border-color: var(--blue);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.form-wrapper button.form-btn {
+  width: 80%;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  border-radius: 17px;
+  padding: 10px 48px;
+  border: none;
+  /* font-weight: 600; */
+  background: var(--blue);
+  color: #fff;
+  cursor: pointer;
+  transition: .3s ease;
+  &:hover{
+    background: rgb(0, 99, 213,.8);
+  }
+}
+
+
+/* .-mx-3 {
+  margin-left: -12px;
+  margin-right: -12px;
+}
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+} */
+/* .flex {
+  display: flex;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.w-full {
+  width: 100%;
+}
+@media (min-width: 540px) {
+  .sm\:w-half {
+    width: 50%;
+  }
+} */

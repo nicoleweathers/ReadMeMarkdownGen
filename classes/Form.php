@@ -1,20 +1,28 @@
 <?php
 class Form
 {
-    public function inputTxt($label){
-        $name = str_replace(' ', '_', $label );
+    public function inputTxt($label, $instruct, $placeholder=''){
+        $name = str_replace(' ', '_', $label);
+        $name = str_replace(',', '', $name);
         $name = strtolower($name);
         return 
-'<label for="'. $name . '">' . $label . ':<br>
-<input type="text" name="'. $name . '" /><br><br>';
+'
+<label for="'. $name . '"> ' . $label . ' :</label>
+<p>' . $instruct  . '</p>
+<input id="' . $name . '" type="text" name="'. $name . '" placeholder="' . $placeholder . '" />
+';
     } // inputTxt()
 
-    public function inputArea($label){
+    public function inputArea($label, $instruct, $placeholder='',$rows='2'){
         $name = str_replace(' ', '_', $label );
+        $name = str_replace(',', '', $name);
         $name = strtolower($name);
         return 
-'<label for="'. $name . '">' . $label . ':<br>
-<textarea name="'. $name . '" /></textarea><br><br>';
+'
+<label for="'. $name . '"> ' . $label . ' </label>
+<p>' . $instruct  . '</p>
+<textarea id="' . $name . '" rows="' . $rows . '" name="'. $name . '">' . $placeholder . '</textarea>
+';
     } // inputArea()
 
     public function git_id(){return '-';}

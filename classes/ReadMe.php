@@ -193,8 +193,11 @@ $contacts =
 
     public function banner1()
     {
+        $subtitle = $this->projectDesc;
+        $subtitle = str_replace('.','', $subtitle);
+
         return '
-<p class="banner1">' . $this->project . '<span class="banner1desc">' . $this->projectDesc . '</span></p>
+<p class="banner1">' . $this->project . '<span class="banner1desc">' . $subtitle . '</span></p>
         ';
     } // end of banner1()
     
