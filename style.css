@@ -1,3 +1,4 @@
+@import "form.css";
 *{
     --purple: #8400ad;
     --magenta: #c0004d;
@@ -5,7 +6,36 @@
     --blue: #4388ff;
 
 }
-
+a{
+    text-decoration: none;
+}
+.start_head{
+    margin: 20px 20px 0 20px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+.start_head h1{    
+    background: var(--blue);
+    border-radius: 5px;
+    letter-spacing: 1px;
+    font-size: 2.5em;
+    padding: 5px 20px;
+    font-weight: normal;
+}
+.start_head a{
+    color: #fff;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+.start_head div{
+    margin-left: -15px;
+    background: var(--blue);
+    border-radius: 50%;
+    font-size: 3.5em;
+    padding: 9px;
+}
 .banner1{
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 2px;

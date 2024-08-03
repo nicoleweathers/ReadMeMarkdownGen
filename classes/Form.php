@@ -1,7 +1,7 @@
 <?php
 class Form
 {
-    public function inputTxt($label, $instruct, $placeholder=''){
+    public function inputTxt($label, $instruct, $value){
         $name = str_replace(' ', '_', $label);
         $name = str_replace(',', '', $name);
         $name = strtolower($name);
@@ -9,11 +9,11 @@ class Form
 '
 <label for="'. $name . '"> ' . $label . ' :</label>
 <p>' . $instruct  . '</p>
-<input id="' . $name . '" type="text" name="'. $name . '" placeholder="' . $placeholder . '" />
+<input id="' . $name . '" type="text" name="'. $name . '" '. $value . ' />
 ';
     } // inputTxt()
 
-    public function inputArea($label, $instruct, $placeholder='',$rows='2'){
+    public function inputArea($label, $instruct, $value='',$rows='12'){
         $name = str_replace(' ', '_', $label );
         $name = str_replace(',', '', $name);
         $name = strtolower($name);
@@ -21,7 +21,7 @@ class Form
 '
 <label for="'. $name . '"> ' . $label . ' </label>
 <p>' . $instruct  . '</p>
-<div class="grow-wrap"><textarea id="' . $name . '" rows="' . $rows . '" name="'. $name . '">' . $placeholder . '</textarea></div>
+<div class="grow-wrap"><textarea id="' . $name . '" rows="' . $rows . '" name="'. $name . '">' . $value . '</textarea></div>
 ';
     } // inputArea()
 
@@ -37,5 +37,5 @@ class Form
     public function contribute(){return '-';}
     public function credits(){return '-';}
     public function links(){return '-';}
-    public function contacts (){return '-';}
+    public function contacts(){return '-';}
 }

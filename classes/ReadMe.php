@@ -76,27 +76,19 @@ $ git init
 ```
 ',
         $file_tree = 
-'shallow_backup/
-├── configs
-│   ├── plist
-│   │   └── com.apple.Terminal.plist
-│   ├── sublime_2
-│   │   └── ...
-│   └── sublime_3
-│       └── ...
-├── dotfiles
-│   ├── .bash_profile
-│   ├── .ssh/
-│   │   └── known_hosts
-│   ├── .vim/
-│   └── .zshrc
-├── fonts
-│   ├── AllerDisplay.ttf
-│   └── Ubuntu Mono derivative Powerline.ttf
-└── packages
-    ├── brew-cask_list.txt
-    ├── brew_list.txt
-    └── sublime3_list.txt
+'# EXAMPLE OF TREE
+|-- assets
+|   |-- fonts
+|   |   |-- Poppins-Bold.woff2
+|   |   |-- Poppins-ExtraBold.woff2
+|   |   |-- Poppins-Regular.woff2
+|   |   `-- fonts.css
+|   |-- imgs
+|   |   |-- logo-sq.png
+|   |   `-- logo.png
+|-- favicon.ico
+|-- index.html
+`-- style.css
 ',
 $how = 
 '1. Install on local server.
