@@ -43,26 +43,26 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 {
 
     // First add does not append, so that it will replace any contents already in file
-    file_put_contents("README_file.md",$gen->top());
+    file_put_contents("md-files/README_file.md",$gen->top());
 
-    file_put_contents("README_file.md",$gen->toc(), FILE_APPEND);
-    file_put_contents("README_file.md",$gen->keyfeat(), FILE_APPEND);
-    file_put_contents("README_file.md",$gen->imgs(), FILE_APPEND);
-    file_put_contents("README_file.md",$gen->about(), FILE_APPEND);
-    file_put_contents("README_file.md",$gen->demo(), FILE_APPEND);
-    file_put_contents("README_file.md",$gen->dependencies(), FILE_APPEND);
-    file_put_contents("README_file.md",$gen->installation(), FILE_APPEND);
-    file_put_contents("README_file.md",$gen->download(), FILE_APPEND);
-    file_put_contents("README_file.md",$gen->output_struct(), FILE_APPEND);
-    file_put_contents("README_file.md",$gen->how_it_works(), FILE_APPEND);
-    file_put_contents("README_file.md",$gen->license(), FILE_APPEND);
-    file_put_contents("README_file.md",$gen->support(), FILE_APPEND);
-    file_put_contents("README_file.md",$gen->contribute(), FILE_APPEND);
-    file_put_contents("README_file.md",$gen->credits(), FILE_APPEND);
-    file_put_contents("README_file.md",$gen->links(), FILE_APPEND);
-    file_put_contents("README_file.md",$gen->contacts(), FILE_APPEND);
-    file_put_contents("README_file.md",$gen->bottom(), FILE_APPEND);
+    file_put_contents("md-files/README_file.md",$gen->toc(), FILE_APPEND);
+    file_put_contents("md-files/README_file.md",$gen->keyfeat(), FILE_APPEND);
+    file_put_contents("md-files/README_file.md",$gen->imgs(), FILE_APPEND);
+    file_put_contents("md-files/README_file.md",$gen->about(), FILE_APPEND);
+    file_put_contents("md-files/README_file.md",$gen->demo(), FILE_APPEND);
+    file_put_contents("md-files/README_file.md",$gen->dependencies(), FILE_APPEND);
+    file_put_contents("md-files/README_file.md",$gen->installation(), FILE_APPEND);
+    file_put_contents("md-files/README_file.md",$gen->download(), FILE_APPEND);
+    file_put_contents("md-files/README_file.md",$gen->output_struct(), FILE_APPEND);
+    file_put_contents("md-files/README_file.md",$gen->how_it_works(), FILE_APPEND);
+    file_put_contents("md-files/README_file.md",$gen->license(), FILE_APPEND);
+    file_put_contents("md-files/README_file.md",$gen->support(), FILE_APPEND);
+    file_put_contents("md-files/README_file.md",$gen->contribute(), FILE_APPEND);
+    file_put_contents("md-files/README_file.md",$gen->credits(), FILE_APPEND);
+    file_put_contents("md-files/README_file.md",$gen->links(), FILE_APPEND);
+    file_put_contents("md-files/README_file.md",$gen->contacts(), FILE_APPEND);
+    file_put_contents("md-files/README_file.md",$gen->bottom(), FILE_APPEND);
 
-    header("location: form");
+    header("location: results");
 
 }    

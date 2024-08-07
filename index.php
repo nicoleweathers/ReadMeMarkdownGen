@@ -1,25 +1,10 @@
 <?php
 session_start();
 $_SESSION['stat'] = 1;
+require_once 'inc/init.php';
+
+echo htmlheader();
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <title>ReadMe Markdown File Generator</title>
-  <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="style.css">
-  <!-- <link rel="stylesheet" href="index.css"> -->
-</head>
-
-<body>
-  <div id="top">
-    ReadMe MarkDown Gen
-  </div>
-  <div class="top">
-    Time saving markdown file generator
-  </div>
-
 
   <div id="main">
     <div class="content">
@@ -47,13 +32,13 @@ $_SESSION['stat'] = 1;
 
 
   <div id="customoptions">
-    <div style="width:100%;padding-left:7%;padding-right:7%;font-size:18px">
+  <section>
     <h1>Choose The Sections You Want To Include</h1>
     We recommend choosing all sections because they were carefully selected after comparing dozens of good readme files.
     You can always edit the output once it is generated. For example, you might want to remove a section or change the
     heading/title of a section. Even if you select all sections, you still need to replace the data with your own
     content if the default (demo) data does not match your project specifications.<br><br>
-    </div>
+  </section>
 
     <div class="child">
 
@@ -224,19 +209,4 @@ $_SESSION['stat'] = 1;
 
 
 
-  <footer>
-    <?php
-    $start_yr = 2024;
-    $current_yr = date('Y');
-
-    if ($start_yr < $current_yr) {
-      $copyright_date = $start_yr . ' - ' . $current_yr;
-    } else {
-      $copyright_date = $current_yr;
-    }
-    echo '&copy; ' . $copyright_date . ' Designed by <a href="https://github.com/nicoleweathers" target="_blank">Nicole Weathers</a>';
-    ?>
-  </footer>
-</body>
-
-</html>
+  <?php echo wsfooter();?>
