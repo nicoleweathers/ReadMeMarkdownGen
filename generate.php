@@ -23,8 +23,16 @@ PROCEDURES THAT FOLLOW IN THE ORDER THAT THEY ARE IN.
 if(isset($_SESSION['subtitle'])) $sect->projectDesc =  $_SESSION['subtitle'];
 if(isset($_SESSION['project_name'])) $sect->project = $_SESSION['project_name'];
 
-// TOP: WRITE TO FILE First so that it will replace any contents already in file
-file_put_contents("md-files/README_file.md",$sect->top());
+// WRITE TO FILE First to will replace any contents already in file
+file_put_contents("md-files/README_file.md",$sect->headtop());
+
+// THESE ARE THE BANNER STYLE OTIONS
+if($_SESSION['addbanner1']) file_put_contents("md-files/README_file.md",$sect->banner('one'), FILE_APPEND);
+if($_SESSION['addbanner2']) file_put_contents("md-files/README_file.md",$sect->banner('two'), FILE_APPEND);
+if($_SESSION['addbanner3']) file_put_contents("md-files/README_file.md",$sect->banner('three'), FILE_APPEND);
+
+// TOP: CONTENT AT TOP OF PAGE
+file_put_contents("md-files/README_file.md",$sect->top(), FILE_APPEND);
 
 // TABLE OF CONTENTS
 file_put_contents("md-files/README_file.md",$sect->toc(), FILE_APPEND);
@@ -65,7 +73,9 @@ if(isset($_SESSION['installation']))
 }
 
 // DOWNLOAD
-file_put_contents("md-files/README_file.md",$sect->download(), FILE_APPEND);
+if(isset($_SESSION['adddownload']))
+    file_put_contents("md-files/README_file.md",$sect->download(), FILE_APPEND);
+
 
 // ?input=8 => OUTPUT STRUCTURE
 if(isset($_SESSION['file_tree']))
@@ -81,7 +91,8 @@ if(isset($_SESSION['how_it_works']))
     file_put_contents("md-files/README_file.md",$sect->how_it_works(), FILE_APPEND);
 }
 // LICENSE
-file_put_contents("md-files/README_file.md",$sect->license(), FILE_APPEND);    
+if(isset($_SESSION['addlicense']))
+    file_put_contents("md-files/README_file.md",$sect->license(), FILE_APPEND);    
 
 // ?input=10 =>  SUPPORT
 if(isset($_SESSION['support_like_share_donate']))
@@ -119,5 +130,12 @@ if(isset($_SESSION['connections']))
 }
 // BOTTOM
 file_put_contents("md-files/README_file.md",$sect->bottom(), FILE_APPEND);
+
+// THESE ARE THE BANNER STYLE OTIONS
+if($_SESSION['addbanner1']) file_put_contents("md-files/README_file.md",$sect->banner('one'), FILE_APPEND);
+if($_SESSION['addbanner2']) file_put_contents("md-files/README_file.md",$sect->banner('two'), FILE_APPEND);
+if($_SESSION['addbanner3']) file_put_contents("md-files/README_file.md",$sect->banner('three'), FILE_APPEND);
+
+file_put_contents("md-files/README_file.md",$sect->backTotop, FILE_APPEND);
 
 header("location: results");

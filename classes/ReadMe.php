@@ -286,30 +286,15 @@ $contacts =
     <a href="#-about">About</a>
     <a href="#-installation">Installation</a>
     <a href="#-license">License</a>
-    <a href="#-usage">Usage</a>
+    <a href="#-how-it-works">How It Works</a>
     <a href="#-download">Download</a>
 </p>
 
 ';
     } // end of mini_nav()
-
-    public function top($b = 'one')
-    {
-        $banner = $b;
-
-        switch($banner)
-        {
-            case 'three':
-                $ban = $this->banner3();
-                break;
-            case 'two':
-                $ban = $this->banner2();
-                break;     
-            default:
-                $ban = $this->banner1();
-                break;                        
-        }
-       $txt = "
+public function headtop()
+{
+$txt = "
 <!--------------------------------------------------------------------------------------------------------
 This README.md file was generated using web app repository available at github.com/nicoleweathers/ReadMeGen
 ---------------------------------------------------------------------------------------------------------->
@@ -321,7 +306,35 @@ $logo =
   <img src="imgs/logo.webp" alt="ReadMe" width="200">
 </p>
 ';
+return $txt . $css . $logo;
+}
+// endof headtop()
+/*********************************/
 
+public function banner($b = 'one')
+{
+    $banner = $b;
+
+    switch($banner)
+    {
+        case 'three':
+            $ban = $this->banner3();
+            break;
+        case 'two':
+            $ban = $this->banner2();
+            break;     
+        default:
+            $ban = $this->banner1();
+            break;                        
+    }
+
+    return $ban;
+}
+// end of banner()
+
+/****************************************/
+public function top()
+{
 $nav = $this->mini_nav();
 
 $end_top = 
@@ -334,38 +347,51 @@ $end_top =
 <a id="readme-top"></a>
 ';
 
-return $txt . $css . $logo . $ban . $nav . $end_top;
+return $nav . $end_top;
 
-    } // end of top()
+    } 
+// end of top()
 
+/*******************************************/
     public function toc()
     {
-        return 
-'
+    isset($_SESSION['key_features']) ? $keyfeatures = "- [Key Features](#-key-features)" : '';
+    $about = "- [About](#-about)";
+    isset($_SESSION['demo']) ? $demo = "- [Demo](#-demo)" : '';
+    isset($_SESSION['dependencies']) ? $dependencies = "- [Dependencies](#-dependencies)" : '';
+    isset($_SESSION['installation']) ? $installation = "- [Installation](#-installation)" : '';
+    isset($_SESSION['adddownload']) ? $download  = "- [Download](#download)" : '';
+    isset($_SESSION['file_tree']) ? $file_tree = "- [Output Structure](#output-structure)" : '';
+    isset($_SESSION['how_it_works']) ? $how_it_works = "- [How It Works](#-how-it-works)" : '';
+    isset($_SESSION['addlicense']) ? $license  = "- [License](#-license)" : '';
+    isset($_SESSION['support_like_share_donate']) ? $support = "- [Support](#-support)" : '';
+    isset($_SESSION['contributions']) ? $contributions = "- [Contribute](#-contribute)" : '';
+    isset($_SESSION['connections']) ? $contacts  = "- [Contacts](#-contacts)" : '';
+
+    return
+"
 # Table of Contents
 
 <details open>
 <summary> &nbsp; &#9756; </summary> <br />
 
-- [Key Features](#-key-features)
-- [Screenshots](#-screenshots)
-- [About](#-about)
-- [Demo](#-demo)
-- [Dependencies](#-dependencies)
-- [Installation](#-installation)
-- [Download](#download)
-- [Output Structure](#output-structure)
-- [Usage](#-usage)
-- [License](#-license)
-- [Support](#-support)
-- [Contribute](#-contribute)
-- [Credits and Acknowledgements](#-credits-and-acknowledgements)
-- [Contacts](#-contacts)
+$keyfeatures
+$about
+$demo
+$dependencies
+$installation
+$download
+$file_tree
+$how_it_works
+$license
+$support
+$contributions
+$contacts
   
 </details>
 
 <br>
-'
+"
 . $this->backTotop
 ;
     } // end of toc()
@@ -496,7 +522,7 @@ You can [download](' . $this->repoUrl  . '/archive/refs/heads/main.zip) the file
 $head =
 '
 
-## &#9733; Usage
+## &#9733; How It Works
 
 ';
         return $head . $this->howItWorks .  $this->backTotop;
@@ -584,24 +610,9 @@ $head =
 
 /*****************************************************/
 
-    public function bottom($b = 'one')
+    public function bottom()
     {
-        $banner = $b;
-
-        switch($banner)
-        {
-            case 'three':
-                $ban = $this->banner3();
-                break;
-            case 'two':
-                $ban = $this->banner2();
-                break;     
-            default:
-                $ban = $this->banner1();
-                break;                        
-        }
-
-    return 
+return 
 '
 <div class="end_cta">
 <p>Liked the work?</p>
@@ -609,10 +620,10 @@ $head =
 ### ⭐ Star us on GitHub — it motivates us a lot!
 
 </div> 
-' 
-. $ban . $this->backTotop;
+';
 
-    } // end of bottom()
+    } 
+// end of bottom()
 
 /*****************************************************/
     

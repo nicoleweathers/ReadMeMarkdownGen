@@ -26,22 +26,22 @@ if(!isset($_SESSION['stat']))
 
 /* CREATING THESE SESSIONS IF POST ISSET: */
 
-if(isset($_POST['github_id']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['github_id'] = $_POST['github_id'];
-if(isset($_POST['github_repo']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['github_repo'] = $_POST['github_repo'];
-if(isset($_POST['project_name']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['project_name'] = $_POST['project_name'];
-if(isset($_POST['subtitle']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['subtitle'] = $_POST['subtitle'];
-if(isset($_POST['key_features']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['key_features'] = $_POST['key_features'];
-if(isset($_POST['about']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['about'] = $_POST['about'];
-if(isset($_POST['demo']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['demo'] = $_POST['demo'];
-if(isset($_POST['dependencies']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['dependencies'] = $_POST['dependencies'];
-if(isset($_POST['installation']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['installation'] = $_POST['installation'];
-if(isset($_POST['file_tree']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['file_tree'] = $_POST['file_tree'];
-if(isset($_POST['how_it_works']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['how_it_works'] = $_POST['how_it_works'];
-if(isset($_POST['support_like_share_donate']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['support_like_share_donate'] = $_POST['support_like_share_donate'];
-if(isset($_POST['contributions']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['contributions'] = $_POST['contributions'];
-if(isset($_POST['credits']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['credits'] = $_POST['credits'];
-if(isset($_POST['related_links']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['related_links'] = $_POST['related_links'];
-if(isset($_POST['connections']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['connections'] = $_POST['connections'];
+// if(isset($_POST['github_id']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['github_id'] = $_POST['github_id'];
+// if(isset($_POST['github_repo']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['github_repo'] = $_POST['github_repo'];
+// if(isset($_POST['project_name']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['project_name'] = $_POST['project_name'];
+// if(isset($_POST['subtitle']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['subtitle'] = $_POST['subtitle'];
+// if(isset($_POST['key_features']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['key_features'] = $_POST['key_features'];
+// if(isset($_POST['about']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['about'] = $_POST['about'];
+// if(isset($_POST['demo']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['demo'] = $_POST['demo'];
+// if(isset($_POST['dependencies']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['dependencies'] = $_POST['dependencies'];
+// if(isset($_POST['installation']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['installation'] = $_POST['installation'];
+// if(isset($_POST['file_tree']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['file_tree'] = $_POST['file_tree'];
+// if(isset($_POST['how_it_works']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['how_it_works'] = $_POST['how_it_works'];
+// if(isset($_POST['support_like_share_donate']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['support_like_share_donate'] = $_POST['support_like_share_donate'];
+// if(isset($_POST['contributions']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['contributions'] = $_POST['contributions'];
+// if(isset($_POST['credits']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['credits'] = $_POST['credits'];
+// if(isset($_POST['related_links']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['related_links'] = $_POST['related_links'];
+// if(isset($_POST['connections']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['connections'] = $_POST['connections'];
  
 require_once './inc/init.php';
 
@@ -248,17 +248,6 @@ switch($add)
         $back = "?input=2";        
         break;
 
-/*
---------- all mds have these OR not part of form.php --------------
-$ProjectInfo = "2";
-$About = "7";
-$_SESSION['adddownload']
-$_SESSION['addbanner1']
-$_SESSION['addbanner2']
-$_SESSION['addbanner3']
-$_SESSION['addlicense']
-$GitHubids = "form";
-*/ 
     case 2:
         if(isset($_SESSION['project_name'])){
             $value = 'value="' . $_SESSION['project_name'] . '" ';
