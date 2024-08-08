@@ -58,26 +58,30 @@ function wsfooter()
 </body</html>';
 }
 
-function md_download()
+
+function pagelinks()
 {
-  // THIS WILL PROMPT DOWNLOAD OF FILE
- if(!empty($_GET['file']))
- { 
-    // Define file name and path 
-    $fileName = basename($_GET['file']); 
-    $filePath = './'.$fileName; 
+  $pages = [
+    'About' => '?input=7',
+    'Contacts' => '?input=14',
+    'Contribute' => '?input=11',
+    'Credits' => '?input=12',
+    "Demo" => "?input=6",
+    "Dependencies" => "?input=5",
+    "File Tree" => "?input=8",
+    "GitHub id & Repo id" => "./form",
+    "How it Works" => "?input=9",
+    "Installation" => "?input=4",
+    "Key Features" => "?input=3",
+    "Links" => "?input=13",
+    "Project Name & Subtitle" => "?input=2",
+    "Support" => "?input=10"
+  ];
  
-    if(!empty($fileName) && file_exists($filePath)){ 
-        // Define headers 
-        header("Content-Description: File Transfer"); 
-        header("Content-Disposition: attachment; filename=$fileName"); 
-        header('Content-Type: application/octet-stream'); // CHANGE THIS BASED ON CONTENT-TYPE
-        header("Content-Transfer-Encoding: binary"); 
-        header('Expires: 0');
-        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-         
-        // Read the file 
-        readfile($filePath); 
-    }
- }
+  echo '<p align="center">';
+  
+  foreach($pages as $pg => $value) 
+     echo "&nbsp;<a href=\"$value\">$pg</a>&nbsp;&bull;";
+  
+  echo '</p>';
 }

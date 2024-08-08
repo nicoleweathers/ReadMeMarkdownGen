@@ -5,6 +5,7 @@
     --goldish: #ffda00;
     --green: #32c600;
     --blue: #4388ff;
+    --blue2: #1d5cc8;
     --offwht: #e7f3fe;
     --blk: #161616;
     --drk1: #0D1117;
@@ -24,6 +25,9 @@ body{
 }
 a{
     text-decoration: none;
+    &:hover{
+        color: var(--blue2);
+    }
 }
 
 button.submit{
@@ -87,52 +91,52 @@ h1.redheading{
 }
 /************* Styling the selection grid ****************/
 .banner1_sel{   
-    background: url('imgs/bannerstyle1.png');
+    background: url('md-files/imgs/bannerstyle1.png');
 }
 .banner2_sel{   
-    background: url('imgs/bannerstyle2.png');
+    background: url('md-files/imgs/bannerstyle2.png');
 }
 .banner3_sel{   
-    background: url('imgs/bannerstyle3.png');
+    background: url('md-files/imgs/bannerstyle3.png');
 }
 .keyfeatures_sel{   
-    background: url('imgs/3.keyfeatures.png');
+    background: url('md-files/imgs/3.keyfeatures.png');
 }
 .installation_sel{   
-    background: url('imgs/4.installation.png');
+    background: url('md-files/imgs/4.installation.png');
 }
 .dependencies_sel{   
-    background: url('imgs/5.dependencies.png');
+    background: url('md-files/imgs/5.dependencies.png');
 }
 .demo_sel{   
-    background: url('imgs/6.demo.png');
+    background: url('md-files/imgs/6.demo.png');
 }
 .output-structure_sel{   
-    background: url('imgs/8.output-structure.png');
+    background: url('md-files/imgs/8.output-structure.png');
 }
 .how-it-works_sel{   
-    background: url('imgs/9.how-it-works.png');
+    background: url('md-files/imgs/9.how-it-works.png');
 }
 .support_sel{   
-    background: url('imgs/10.support.png');
+    background: url('md-files/imgs/10.support.png');
 }
 .contributions_sel{   
-    background: url('imgs/11.contributions.png');
+    background: url('md-files/imgs/11.contributions.png');
 }
 .credits_sel{   
-    background: url('imgs/12.credits.png');
+    background: url('md-files/imgs/12.credits.png');
 }
 .links_sel{   
-    background: url('imgs/13.links.png');
+    background: url('md-files/imgs/13.links.png');
 }
 .contacts_sel{   
-    background: url('imgs/14.contacts.png');
+    background: url('md-files/imgs/14.contacts.png');
 }
 .license_sel{   
-    background: url('imgs/15.license.png');
+    background: url('md-files/imgs/15.license.png');
 }
 .download_sel{   
-    background: url('imgs/16.download.png');
+    background: url('md-files/imgs/16.download.png');
 }
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 

@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['stat'])) 
+if(!isset($_SESSION['stat']))
 {
     echo '
 <html>
@@ -18,7 +18,12 @@ if(!isset($_SESSION['stat']))
 </html>  
 ';
     die();
-}
+} 
+
+
+/** @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ **/
+
+
 /* CREATING THESE SESSIONS IF POST ISSET: */
 
 if(isset($_POST['github_id']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['github_id'] = $_POST['github_id'];
@@ -38,8 +43,7 @@ if(isset($_POST['credits']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['cr
 if(isset($_POST['related_links']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['related_links'] = $_POST['related_links'];
 if(isset($_POST['connections']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['connections'] = $_POST['connections'];
  
-include 'classes/ReadMe.php';
-include 'classes/Form.php';
+require_once './inc/init.php';
 
 $markdown = new ReadMe();
 $form = new Form();
@@ -55,73 +59,117 @@ if(isset($_GET['input'])){
 switch($add)
 {
     case 14:
+        if(!isset($_SESSION['addcontacts'])) header('location: go');
         if(isset($_SESSION['connections'])){
             $value = $_SESSION['connections'];
         }else{$value = $markdown->contacts;}
 
         $input = $form->inputArea('Connections', 'Provide contact information here _like your email (if you want) or other ways/instructions to reach you.', $value,8);
+
         $action = "generate";
-        $back = "?input=13";         
+
+        if(isset($_SESSION['addlinks'])) $back = "?input=13";
+        else $back = "?input=12";  
+
         break;
 
     case 13:
+        if(!isset($_SESSION['addlinks'])) header('location: ?input=14');
         if(isset($_SESSION['related_links'])){
             $value = $_SESSION['related_links'];
         }else{$value = $markdown->links;}
         
         $input = $form->inputArea('Related Links', 'Share links that are relevant to the project.', $value,10);
-        $action = "?input=14";
-        $back = "?input=12";         
+
+        if(isset($_SESSION['addcontacts'])) $action = "?input=14";
+        else $action = "generate";
+      
+        if(isset($_SESSION['addcredits'])) $back = "?input=12";
+        else $back = "?input=11";          
+        
         break;  
 
 
-
     case 12:
+        if(!isset($_SESSION['addcredits'])) header('location: ?input=13');
         if(isset($_SESSION['credits'])){
             $value = $_SESSION['credits'];
         }else{$value = $markdown->credits;}
         
         $input = $form->inputArea('Credits', 'Here is where you give credit to any source that helped you in creating this project.', $value,20);
-        $action = "?input=13";
-        $back = "?input=11";         
-        break; 
 
+        
+        if(isset($_SESSION['addlinks'])) $action = "?input=13";
+        else $action = "?input=14";
+      
+        if(isset($_SESSION['addcontributions'])) $back = "?input=11";
+        else $back = "?input=10";  
+
+        break; 
+  
     case 11:
+        
+        if(!isset($_SESSION['addcontributions'])) header('location: ?input=12');
         if(isset($_SESSION['contributions'])){
             $value = $_SESSION['contributions'];
         }else{$value = $markdown->contribute;}
         
         $input = $form->inputArea('Contributions', 'Write instructions for contributing or just use the default created by generator.', $value,14);
-        $action = "?input=12";
-        $back = "?input=10";         
-        break;        
+
+        if(isset($_SESSION['addcredits'])) $action = "?input=12";
+        else $action = "?input=13";
+      
+        if(isset($_SESSION['addsupport'])) $back = "?input=10";
+        else $back = "?input=9";          
+        
+        break;    
+      
+        
     case 10:
+        if(!isset($_SESSION['addsupport'])) header('location: ?input=11');
         if(isset($_SESSION['support_like_share_donate'] )){
             $value = $_SESSION['support_like_share_donate'] ;
         }else{$value = $markdown->support;}
         
         $input = $form->inputArea('Support, Like, Share, Donate', 'This is where you paste in support links like Paetreon and like/share buttons and instructions.', $value);
-        $action = "?input=11";
-        $back = "?input=9";         
-        break;
 
+        if(isset($_SESSION['addcontributions'])) $action = "?input=11";
+        else $action = "?input=12";
+      
+        if(isset($_SESSION['addhow-it-works'])) $back = "?input=9";
+        else $back = "?input=8";       
+
+        break;
+ 
     case 9:
+        if(!isset($_SESSION['addhow-it-works'])) header('location: ?input=10');
         if(isset($_SESSION['how_it_works'])){
             $value = $_SESSION['how_it_works'];
         }else{$value = $markdown->howItWorks;}
         
         $input = $form->inputArea('How It Works', 'Talk about how it works here.', $value);
-        $action = "?input=10";
-        $back = "?input=8";         
+
+        if(isset($_SESSION['addsupport'])) $action = "?input=10";
+        else $action = "?input=11";
+      
+        if(isset($_SESSION['addoutput-structure'])) $back = "?input=8";
+        else $back = "?input=7";          
+        
         break;
+      
     case 8:
+        if(!isset($_SESSION['addoutput-structure'])) header('location: ?input=9');
         if(isset($_SESSION['file_tree'])){
             $value = $_SESSION['file_tree'];
         }else{$value = $markdown->fileTree;}
 
         $input = $form->inputArea('File Tree', 'Use the Shell or BASH to generate a file tree and PASTE it here.', $value,'16');
-        $action = "?input=9";
-        $back = "?input=7";         
+
+        if(isset($_SESSION['addhow-it-works'])) $action = "?input=9";
+        else $action = "?input=10";
+      
+        $back = "?input=7";       
+        
         break;
 
     case 7:
@@ -130,74 +178,113 @@ switch($add)
         }else{$value = $markdown->aboutProj; }
 
         $input = $form->inputArea('About', 'Write in as many words as you want, all about your project _what it is, what it does, and why you created it.', $value,18);
-        $action = "?input=8";
-        $back = "?input=6";         
+
+        if(isset($_SESSION['addoutput-structure'])) $action = "?input=8";
+        else $action = "?input=9";
+      
+        if(isset($_SESSION['adddemo'])) $back = "?input=6";
+        else $back = "?input=5";  
+
         break;
 
     case 6:// $gen->demo();
+        if(!isset($_SESSION['adddemo'])) header('location: ?input=7');
         if(isset($_SESSION['demo'])){
             $value = 'value="' . $_SESSION['demo'] . '" ';
-        }else{$value = 'value="ex. '.$markdown->demoUrl.'"'; }        
+        }else{$value = 'value="'.$markdown->demoUrl.'"'; }        
 
         $input = $form->inputTxt('Demo', 'Add url to project demo', $value);
+
         $action = "?input=7";
-        $back = "?input=5";         
+      
+        if(isset($_SESSION['adddependencies'])) $back = "?input=5";
+        else $back = "?input=4";  
+
         break;
 
     case 5: // $gen->; 
-
+        if(!isset($_SESSION['adddependencies'])) header('location: ?input=6');
         if(isset($_SESSION['dependencies'])){
             $value = $_SESSION['dependencies'];
         }else{$value = $markdown->dependencies; }
 
         $input = $form->inputArea('Dependencies', 'Write about dependecies here', $value,8);
-        $action = "?input=6";
-        $back = "?input=4";         
+
+        if(isset($_SESSION['adddemo'])) $action = "?input=6";
+        else $action = "?input=7";
+      
+        if(isset($_SESSION['addinstallation'])) $back = "?input=4";
+        else $back = "?input=3";  
+
         break;
 
     case 4:// $gen->;
+        if(!isset($_SESSION['addinstallation'])) header('location: ?input=5');
         if(isset($_SESSION['installation'])){
             $value = $_SESSION['installation'];
         }else{$value = $markdown->installation; }
 
         $input = $form->inputArea('Installation', 'This is where you give installation instructions. ', $value,15);
-        $action = "?input=5";
-        $back = "?input=3";         
+
+        if(isset($_SESSION['adddependencies'])) $action = "?input=5";
+        else $action = "?input=6";
+      
+        if(isset($_SESSION['addkeyfeatures'])) $back = "?input=3";
+        else $back = "?input=2";
+
         break;
 
     case 3:
+        if(!isset($_SESSION['addkeyfeatures'])) header('location: ?input=4');
         if(isset($_SESSION['key_features'])){
             $value = $_SESSION['key_features'];
         }else{$value = $markdown->keyFeatures; }
 
         $input = $form->inputArea('Key Features', 'Type or paste in key features here. Suggestion: Make a bullet list. For a bullet list, you can use MD or HTML format.', $value,8);
-        $action = "?input=4";
+
+        if(isset($_SESSION['addinstallation'])) $action = "?input=4";
+        else $action = "?input=5";
+
         $back = "?input=2";        
         break;
 
+/*
+--------- all mds have these OR not part of form.php --------------
+$ProjectInfo = "2";
+$About = "7";
+$_SESSION['adddownload']
+$_SESSION['addbanner1']
+$_SESSION['addbanner2']
+$_SESSION['addbanner3']
+$_SESSION['addlicense']
+$GitHubids = "form";
+*/ 
     case 2:
         if(isset($_SESSION['project_name'])){
             $value = 'value="' . $_SESSION['project_name'] . '" ';
-        }else{$value = 'value="ex. '.$markdown->project.'"'; }
+        }else{$value = 'value="'.$markdown->project.'"'; }
         
         if(isset($_SESSION['subtitle'])){
             $value2 = 'value="' . $_SESSION['subtitle'] . '" ';
-        }else{$value2 = 'value="ex. '.$markdown->projectDesc.'"'; }
+        }else{$value2 = 'value="'.$markdown->projectDesc.'"'; }
 
         $input = $form->inputTxt('Project Name', 'Create a unique name (title) for project, ', $value ) .
         $form->inputTxt('Subtitle', 'Use 1 short sentence to describe what this is or what it does.', $value2 );
-        $action = "?input=3";
+
+        if(isset($_SESSION['addkeyfeatures'])) $action = "?input=3";
+        else $action = "?input=4";
+
         $back = $mainurl;          
         break;       
         
     case 1:
         if(isset($_SESSION['github_id'])){
             $value = 'value="' . $_SESSION['github_id'] . '" ';
-        }else{$value = 'value="ex. '.$markdown->githubID.'"'; }
+        }else{$value = 'value="'.$markdown->githubID.'"'; }
         
         if(isset($_SESSION['github_repo'])){
             $value2 = 'value="' . $_SESSION['github_repo'] . '" ';
-        }else{$value2 = 'value="ex. '.$markdown->githubClone.'"'; }
+        }else{$value2 = 'value="'.$markdown->githubClone.'"'; }
 
         $input = $form->inputTxt('Github id', 'Add your GitHub id.', $value) .
         $form->inputTxt('Github repo', 'Add the name of your repository (no spaces).', $value2);
@@ -208,11 +295,11 @@ switch($add)
     default: 
         if(isset($_SESSION['github_id'])){
             $value = 'values="' . $_SESSION['github_id'] . '" ';
-        }else{$value = 'value="ex. '.$markdown->githubID.'"'; }
+        }else{$value = 'value="'.$markdown->githubID.'"'; }
         
         if(isset($_SESSION['github_repo'])){
             $value2 = 'values="' . $_SESSION['github_repo'] . '" ';
-        }else{$value2 = 'value="ex. '.$markdown->githubClone.'"'; }
+        }else{$value2 = 'value="'.$markdown->githubClone.'"'; }
 
         $input = $form->inputTxt('Github id', 'Add your GitHub id.', $value) .
         $form->inputTxt('Github repo', 'Add the name of your repository.', $value2);
@@ -265,23 +352,8 @@ if($_GET['input'] == 14){
         <p style="font-size:2em;margin-right:25px;"><a href=".">&#8962;</a></p>
 <p style="flex:1"><a href="end_session"><u>Clear Session Cookies</u></a></p>
     </div>
-    <p align="center">
-        &nbsp;<a href="?input=7">About</a>&nbsp;&bull;
-        &nbsp;<a href="?input=14">Contacts</a>&nbsp;&bull;
-        &nbsp;<a href="?input=11">Contribute</a>&nbsp;&bull;
-        &nbsp;<a href="?input=12">Credits</a>&nbsp;&bull;
-        &nbsp;<a href="?input=6">Demo</a>&nbsp;&bull;
-        &nbsp;<a href="?input=5">Dependencies</a>&nbsp;&bull;
-        &nbsp;<a href="?input=8">File Tree</a>&nbsp;&bull;
-        &nbsp;<a href="form">GitHub id & Repo id</a>&nbsp;&bull;
-        &nbsp;<a href="?input=9">How it Works</a>&nbsp;&bull;
-        &nbsp;<a href="?input=4">Installation</a>&nbsp;&bull;
-        &nbsp;<a href="?input=3">Key Features</a>&nbsp;&bull;
-        &nbsp;<a href="?input=13">Links</a>&nbsp;&bull;
-        &nbsp;<a href="?input=2">Project Name & Subtitle</a>&nbsp;&bull;
-        &nbsp;<a href="?input=10">Support</a>&nbsp;&bull;
-    </p>
 
+<?php pagelinks() ?>
 
 <script>
 const growers = document.querySelectorAll(".grow-wrap");

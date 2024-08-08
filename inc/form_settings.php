@@ -20,6 +20,26 @@ if(!isset($_SESSION['stat']))
 }
 /* CREATING THESE SESSIONS IF POST ISSET: */
 
+// POST SELECTIONS FROM INDEX PAGE
+if(isset($_POST['addbanner1']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['addbanner1'] = true;
+if(isset($_POST['addbanner2']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['addbanner2'] = true;
+if(isset($_POST['addbanner3']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['addbanner3'] = true;
+if(isset($_POST['addcontacts']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['addcontacts'] = true;
+if(isset($_POST['addcontributions']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['addcontributions'] = true;
+if(isset($_POST['addcredits']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['addcredits'] = true;
+if(isset($_POST['addkeyfeatures']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['addkeyfeatures'] = true;
+if(isset($_POST['adddemo']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['adddemo'] = true;
+if(isset($_POST['adddependencies']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['adddependencies'] = true;
+if(isset($_POST['adddownload']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['adddownload'] = true;
+if(isset($_POST['addhow-it-works']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['addhow-it-works'] = true;
+if(isset($_POST['addinstallation']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['addinstallation'] = true;
+if(isset($_POST['addlicense']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['addlicense'] = true;
+if(isset($_POST['addlinks']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['addlinks'] = true;
+if(isset($_POST['addoutput-structure']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['addoutput-structure'] = true;
+if(isset($_POST['addsupport']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['addsupport'] = true;
+
+
+// POST SELECTIONS FROM FORM INPUTS
 if(isset($_POST['github_id']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['github_id'] = $_POST['github_id'];
 if(isset($_POST['github_repo']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['github_repo'] = $_POST['github_repo'];
 if(isset($_POST['project_name']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['project_name'] = $_POST['project_name'];
