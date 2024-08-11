@@ -1,18 +1,5 @@
 <?php
 
-function footercopy()
-{
-    $start_yr = 2024;
-    $current_yr = date('Y');
-
-    if ($start_yr < $current_yr) {
-      $copyright_date = $start_yr . ' - ' . $current_yr;
-    } else {
-      $copyright_date = $current_yr;
-    }
-    return '&copy; ' . $copyright_date . ' Designed by <a href="https://github.com/'.GITHUBID.'" target="_blank">'.AUTHOR.'</a>';
-}
-
 function option($class,$id,$title='',$checked='')
 {
     echo '
@@ -35,19 +22,34 @@ function htmlheader()
 <head>
   <title>ReadMe Markdown File Generator</title>
   <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-  <div id="top">
-    ReadMe MarkDown Gen
-  </div>
-  <div class="top">
-    Time saving markdown file generator
-  </div>    
+
+    <div id="top">
+      ReadMe MarkDown Gen
+    </div>
+    <div class="top">
+      '.PROJDESC.'
+    </div>
+
     ';
 }
 
+function footercopy()
+{
+    $start_yr = 2024;
+    $current_yr = date('Y');
+
+    if ($start_yr < $current_yr) {
+      $copyright_date = $start_yr . ' - ' . $current_yr;
+    } else {
+      $copyright_date = $current_yr;
+    }
+    return '&copy; ' . $copyright_date . ' Designed by <a href="https://github.com/'.GITHUBID.'" target="_blank">'.AUTHOR.'</a>';
+}
+projd('Nikki (Nicole) Weathers','nicoleweathers','https://nweathers.neocities.org','ReadMeMarkdownGen','ReadMe Markdown Gen','Time Saving ReadMe Markdow File Generator');
 function wsfooter()
 {
     return '
@@ -55,10 +57,29 @@ function wsfooter()
     <a href="." class="home">&#8962;</a>
 '.footercopy().'
     </footer>
-</body</html>';
+<script>
+const growers = document.querySelectorAll(".grow-wrap");
+
+growers.forEach((grower) => {
+    const textarea = grower.querySelector("textarea");
+    textarea.addEventListener("input", () => {
+        grower.dataset.replicatedValue = textarea.value;
+    });
+});
+</script>
+</body>
+</html>';
 }
+function projd($a,$b,$c,$d,$e,$f)
+{
+  DEFINE('AUTHOR', $a);
+  DEFINE('GITHUBID', $b);
+  DEFINE('WSURL', $c);
+  DEFINE('GITREPO', $d);
+  DEFINE('PROJNAME', $e);
+  DEFINE('PROJDESC', $f);
 
-
+}
 function pagelinks()
 {
   $pages = [

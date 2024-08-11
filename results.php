@@ -14,7 +14,7 @@ echo htmlheader();
     <ol>
 <li>Your file is located in the directory named 'md-files'. You should MOVE this file to your project and rename it from README_file.md to the conventional name, which is <em>README.md</em>. Every time you use ReadMe Markdown Gen it will overwrite the existing file in the <em>/md-files</em> directory named <em>'README_file'</em>. Alternatively, you can just choose to dowload the file that you created and save it with a different name.
 <p align="center">
-<br><img src="./md-files/imgs/readme-save.png" width="450"><br><br>
+<br><img src="./md-files/imgs/readme-save.png" width="400px"><br><br>
     <a href="download?file=README_file.md"><button>Click to Download <u>Your Markdown File</u></button></a>
 </p><br>&nbsp;<br>
 </li>
@@ -34,7 +34,7 @@ echo htmlheader();
 </li>
 </ol>
 
-    <p align="center"><a href="download?file=README_file.md"><button>Click to Download <u>Your Markdown File</u></button></a></p>
+    <p style="margin-top:50px"><a href="." class="black">Make New ReadMe File</a><a href="download?file=README_file.md" style="float:right"><button>Click to Download <u>Your Markdown File</u></button></a></p>
 </section>
 </div>
 

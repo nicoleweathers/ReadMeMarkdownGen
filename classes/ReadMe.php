@@ -35,7 +35,7 @@ class ReadMe
 $git_id='nicoleweathers', 
 $git_repo='ReadMeMarkdownGen', 
 $proj_name='ReadMe Markdown Gen', 
-$project_desc='Time Saving  &#x1f550; ReadMe Markdow File Generator', 
+$project_desc='Time Saving  &#x1f550; ReadMe Markdown File Generator', 
 $keyfeat=
 '
 * Preformatted Markdown - Just change the text
@@ -51,31 +51,25 @@ $images =
 <summary> &nbsp; &#9756; </summary> <br />
 
 <p align="center">
-    <img width="49%" src="imgs/img1.png" />
+    <img width="45%" src="imgs/img1.webp" />
 &nbsp;
-    <img width="49%" src="imgs/img2.png" />
+    <img width="45%" src="imgs/img2.webp" />
 </p>
 
 <p align="center">
-    <img width="49%" src="imgs/img3.png" />
+    <img width="45%" src="imgs/img3.webp" />
 &nbsp;
-    <img width="49%" src="imgs/img4.png" />
+    <img width="45%" src="imgs/img4.webp" />
 </p> 
 
 </details>
 ',
 $about_proj = 
 '
-**DRY Obsession** ☜This is my motivation for writing most of the code that I write. 
-
-Will Generate a nicely formatted markdown ReadMe file, which you can also edit if needed or leave as-is and use in your project. Saves a ton of time because you don\'t have to manually format a MD file. Just fill in the fields you want to add and let the generator do the the rest.
-
-As you can see, it is one of my first repositories (on here), so I created it while brainstorming ideas for how to get in the practice of using GitHub (and GIT). I didn\'t want to have to spend hours just to write an attractive README file for every project; and that is why this was created. 
-
-I literally spent hours looking at other README files on GitHub to get ideas while determining the essentials and borrowing bits and pieces from several sources to come up with a final master piece. Here, you will find le crème de la crème.
+This generates a nicely formatted markdown ReadMe file, which you can also edit if needed or leave as-is and use in your project. Saves a ton of time because you don\'t have to manually format a MD file. Just fill in the fields you want to add and let the generator do the the rest.
 '
 ,
-$demo_url = 'https://nweathers.neocities/readme-md-generator',
+$demo_url = 'https://nweathers.neocities.org/readme-md-generator/',
 
 $depend = 
 '
@@ -99,9 +93,6 @@ $ cd readme-gen
 
 # Remove git
 $ rm -rf .git
-
-# Initialize git on your machine (optional)
-$ git init
 ```
 ',
 
@@ -114,13 +105,8 @@ readme_generator/
 ├── imgs
 │   ├── img1.webp
 │   ├── img2.webp
-│   ├── img3.webp
-│   ├── img4.webp
-│   ├── logo.webp
-│   └── screenshot.gif
-├── end_session.php
+│   └── img3.webp
 ├── form.php
-├── generate.php
 └── index.php
 ',
 
@@ -135,53 +121,42 @@ $how =
 
 $support = 
 '
-<a href="https://www.buymeacoffee.com/nweathers" target="_blank"><img src="imgs/purple_img.webp" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
-
-<p>Or</p> 
-
+<a href="https://www.buymeacoffee.com/nweathers" target="_blank">
+<img src="imgs/purple_img.webp" style="height: 41px !important;width: 174px;" ></a>
 <a href="https://www.patreon.com/nikkiwebd">
-	<img src="imgs/become_a_patron.png" width="160">
-</a><br><br>
-
+<img src="imgs/become_a_patron.webp" style="height: 41px !important;width: 174px;"></a><br><br> Or 
 
 **Share the project link**  with your network on social media >>>
 
-<a href="https://www.reddit.com/submit?url=https%3A%2F%2Fgithub.com%2Fnweathers%2FReadMeMarkdownGen&title=Awesome%20Readme%20Markdown%20File%20Generator!" target="_blank"><img src="https://img.shields.io/twitter/url?label=Reddit&logo=Reddit&style=social&url=https%3A%2F%2Fgithub.com%2Fnweathers%2FReadMeMarkdownGen" alt="Share on Reddit"/></a> 
-<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//github.com/nicoleweathers/ReadMeMarkdownGen" target="_blank"><img src="https://img.shields.io/twitter/url?label=LinkedIn&logo=LinkedIn&style=social&url=https%3A%2F%2Fgithub.com%2Fnweathers%2FReadMeMarkdownGen" alt="Share on LinkedIn"/></a> 
+<a href="https://www.reddit.com/submit?url=https%3A%2F%2Fgithub.com%2Fnweathers%2FReadMeMarkdownGen&title=Awesome%20Readme%20Markdown%20File%20Generator!" target="_blank">
+<img src="imgs/reddit.svg" width="100px" alt="Share on Reddit"/>
+</a> 
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//github.com/nicoleweathers/ReadMeMarkdownGen" target="_blank">
+<img src="imgs/linkedin.svg" width="100px" alt="Share on LinkedIn"/></a> 
 ',
 
 $contribute = 
 '
-I would love to see more banner options. These are pure CSS generated banner styles. If you have any other suggestions, you are more than welcome to give feedback. 
+Contributions are appreciated; here\'s how:
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b fork/YourContribution`)
 3. Commit your Changes (`git commit -m \'Add some YourContribution\'`)
 4. Push to the Branch (`git push origin fork/YourContribution`)
 5. Open a Pull Request
-   
-You can also simply open an issue with the tag "suggestion".
-Don\'t forget to give the project a star! Thanks again!
 ',
 
 $credits = 
 '
-To create this web app, I needed some inspiration, so I searched for good README file recommendations. Ultimately, here are the resources that helped get some good ideas for how to create the ultimate readme.md file:
+Here are some credits to my inspiration: 
 
-+ [@matiassingers](https://github.com/matiassingers/awesome-readme) : Saved me time so I didn\'t have to use a search engine for my research.
-+ [amplication](https://github.com/amplication/amplication#readme) : Multiple image screenshots in collapsible section.
-+ [ajeetdsouza](https://github.com/ajeetdsouza/zoxide#readme) : Nice file tree.
 + [aimeos-typo3](https://github.com/aimeos/aimeos-typo3#readme) : Nice layout, flow, visually attractive.
-+ [EventualShop](https://github.com/AntonioFalcaoJr/EventualShop#readme) : Attractive banner and attractive like [electron-markdownify](https://github.com/amitmerchant1990/electron-markdownify#readme) & [aimeos-typo3](https://github.com/aimeos/aimeos-typo3#readme).
-+ [electron-markdownify](https://github.com/amitmerchant1990/electron-markdownify#readme) : 
-**BEST BY FAR** - This one was like the starting point for my design because it is attractive yet simple _which is perfect for me. As cool as all those emojis/icons are, it\'s too overwhelming for me as an autistic person. I like clean yet attractive styles; and this one did it.
-+ [werewolves-assistant-api-next](https://github.com/antoinezanardi/werewolves-assistant-api-next#readme) : 
- **Worth mentioning**  I did not use any of their styling for this because it was a bit much for me (autistic). But I love how complete and it is I think it is really worth mentioning because if I had the time, I would enhance my template more by adding more icons like they have on their page
++ [electron-markdownify](https://github.com/amitmerchant1990/electron-markdownify#readme) : Great layout and nice design.
++ [werewolves-assistant-api-next](https://github.com/antoinezanardi/werewolves-assistant-api-next#readme) : But I love how complete it is.
 ',
 
 $links =
 '
-- [markdownify-web](https://github.com/amitmerchant1990/markdownify-web) - Web version of Markdownify
 - [markdown](https://github.com/gomarkdown/markdown) - Markdown parser and HTML render for GO
 - [markdown-cheatsheet](https://github.com/tchapi/markdown-cheatsheet) - Markdown Cheatsheet for Github Readme.md
 - [markdown-badges](https://github.com/lleriayo/markdown-badges) - Badges for your personal developer branding, profile, and projects
@@ -190,7 +165,7 @@ $links =
 $contacts = 
 '
 - **Email**: Send us your inquiries or support requests at [youremail@email.com](mailto:youremail@email.com).
-- **Website**: [Nicole Weathers](https://nweathers.neocities.com)
+- **Website**: [Nicole Weathers](https://nweathers.neocities.org)
 
 > GitHub [@nicoleweathers](https://github.com/nicoleweathers) &nbsp;&middot;&nbsp;
 > YouTube [@webdgem](https://youtube.com/@webdgem) &nbsp;&middot;&nbsp;
@@ -201,8 +176,8 @@ $contacts =
 
 /** THIS IS THE END OF ARGUMENTS WITH ASSIGNED VALUES */
 
-
-{ // public function __construct BEGINS
+// public function __construct BEGINS
+{ 
 // The Class properties get values from arguments    
         $this->githubID = $git_id;
         $this->githubClone = $git_repo;
@@ -243,20 +218,32 @@ $contacts =
     public function banner1()
     {
         $subtitle = $this->projectDesc;
-        $subtitle = str_replace('.','', $subtitle);
+        $subtitle = str_replace( '.','', $subtitle );
 
         return 
 '
+
+<p align="center">
+  <img src="imgs/logo.webp" alt="ReadMe" width="160">
+</p>
+
 <p class="banner1">' . $this->project . '<span class="banner1desc">' . $subtitle . '</span></p>
         ';
     } // end of banner1()
     
     public function banner2()
     {
+        $subtitle = $this->projectDesc;
+        $subtitle = str_replace( '.','', $subtitle );
         return 
 '
+
+<p align="center">
+  <img src="imgs/logo2.webp" alt="ReadMe" width="160">
+</p>
+
 <div class="banner2">
-<p class="banner2">' . $this->project . ' </p><span class="banner2desc">' . $this->projectDesc . '</span>
+<p class="banner2">' . $this->project . ' </p><span class="banner2desc">' . $subtitle . '</span>
 </div>
 
 ---
@@ -265,11 +252,14 @@ $contacts =
 
     public function banner3()
     {
+        $subtitle = $this->projectDesc;
+        $subtitle = str_replace( '.','', $subtitle );
         return 
 '
-<div class="banner3">
+<div class="banner3" style="text-align:center;"><br>
+  <img src="imgs/logo-gold-blk.webp" alt="ReadMe" width="160">
   <p class="banner3">' . $this->project . '</p>
-  <p class="banner3desc">' . $this->projectDesc . '</p>
+  <p class="banner3desc">' . $this->$subtitle . '</p>
 </div>
 ';
     } // end of banner3()
@@ -279,7 +269,7 @@ $contacts =
         return 
 '
 
-<p align="center">⭐ Star us on GitHub — it motivates us a lot!</p>
+<p align="center"><strong>⭐ Star us on GitHub — it\'s easy & it fuels us!</strong></p>
 
 <p class="key_feat"> 
     <a href="#-key-features">&bull; Key Features</a>
@@ -300,13 +290,8 @@ This README.md file was generated using web app repository available at github.c
 ---------------------------------------------------------------------------------------------------------->
 ";
 $css = $this->css();
-$logo = 
-'
-<p align="center">
-  <img src="imgs/logo.webp" alt="ReadMe" width="200">
-</p>
-';
-return $txt . $css . $logo;
+
+return $txt . $css;
 }
 // endof headtop()
 /*********************************/
@@ -340,7 +325,7 @@ $nav = $this->mini_nav();
 $end_top = 
 '
 <p align="center">
-  <img src="imgs/screenshot.gif" alt="ReadMe" style="width:75%">
+  <img src="imgs/readmemdgen.gif" alt="ReadMe">
 </p>
 
 ---
@@ -446,7 +431,7 @@ $head .
 '
 [-> See a demo here <-](' . $this->demoUrl  . ')
 
-<img src="imgs/screenshot.gif" alt="ReadMe" style="width:300px">
+<img src="imgs/readmemdgen.gif" alt="ReadMe" style="width:300px">
 '
 . $this->backTotop;
     } 
@@ -535,13 +520,19 @@ $head =
 $head =       
 '
 
-## &#9733; License 
+## 📃 License
 
 ';
         return 
 
 $head.
-'Distributed under the MIT License. See `LICENSE.txt` for more information.
+'
+
+[`ReadMe Markdown Gen`](' . $this->repoUrl  . ') is free and open-source software licensed under 
+the Apache 2.0 `License`. Official project was 
+created by [Nicole Weathers](https://github.com/' . $this->githubID  . ') and distributed under 
+`Creative Commons`.
+
 '
 . $this->backTotop
 ;
@@ -554,7 +545,7 @@ $head.
 $head =
 '
 
-## &#9733; Support
+## &#10084; Support
 
 ';
         return $head . $this->support . $this->backTotop;
@@ -565,7 +556,7 @@ $head =
     {
 $head = 
 '
-## &#9733; Contribute
+## 🐙 Contribute
 
 ';     
         return $head . $this->contribute . $this->backTotop;
@@ -577,7 +568,7 @@ $head =
     {
 $head =
 '
-## &#9733; Credits and Acknowledgements
+## 🤝 Credits and Acknowledgements
 
 ' ;       
         return $head . $this->credits . $this->backTotop;
@@ -590,7 +581,7 @@ $head =
 $head =
 '
 
-## &#9733; You may also like...
+## &#x1F517; You may also like...
 
 ';     
         return $head . $this->links . $this->backTotop;
@@ -602,7 +593,8 @@ $head =
     {
 $head =
 '
-## &#9733; Contacts
+
+## &#x1F4AC; Contacts
 
 ';   
         return $head . $this->contacts . $this->backTotop;
@@ -617,7 +609,7 @@ return
 <div class="end_cta">
 <p>Liked the work?</p>
 
-### ⭐ Star us on GitHub — it motivates us a lot!
+### ⭐ Star us on GitHub — it\'s easy & it fuels us!
 
 </div> 
 ';

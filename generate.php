@@ -14,19 +14,21 @@ if($_SERVER['REQUEST_METHOD']!=='POST'){
 if(isset($_POST['connections']) && $_SERVER['REQUEST_METHOD']=='POST') 
     $_SESSION['connections'] = $_POST['connections'];
 
+
+
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 THE ORDER IN WHICH ALL THESE SECTIONS ARE APPENDED IS INTENTIONAL, SO KEEP 
 PROCEDURES THAT FOLLOW IN THE ORDER THAT THEY ARE IN.
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/    
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/ 
 
 // ?input=2 PROJECT INFO
 if(isset($_SESSION['subtitle'])) $sect->projectDesc =  $_SESSION['subtitle'];
 if(isset($_SESSION['project_name'])) $sect->project = $_SESSION['project_name'];
 
-// WRITE TO FILE First to will replace any contents already in file
+// WRITE TO FILE First to replace any contents already in file
 file_put_contents("md-files/README_file.md",$sect->headtop());
 
-// THESE ARE THE BANNER STYLE OTIONS
+// THESE ARE THE BANNER STYLE OPTIONS
 if($_SESSION['addbanner1']) file_put_contents("md-files/README_file.md",$sect->banner('one'), FILE_APPEND);
 if($_SESSION['addbanner2']) file_put_contents("md-files/README_file.md",$sect->banner('two'), FILE_APPEND);
 if($_SESSION['addbanner3']) file_put_contents("md-files/README_file.md",$sect->banner('three'), FILE_APPEND);
@@ -128,14 +130,16 @@ if(isset($_SESSION['connections']))
     $sect->contacts = $_SESSION['connections']; //$sect->contacts()
     file_put_contents("md-files/README_file.md",$sect->contacts(), FILE_APPEND);
 }
+
 // BOTTOM
 file_put_contents("md-files/README_file.md",$sect->bottom(), FILE_APPEND);
 
-// THESE ARE THE BANNER STYLE OTIONS
+// THESE ARE THE BANNER STYLE OPTIONS
 if($_SESSION['addbanner1']) file_put_contents("md-files/README_file.md",$sect->banner('one'), FILE_APPEND);
 if($_SESSION['addbanner2']) file_put_contents("md-files/README_file.md",$sect->banner('two'), FILE_APPEND);
 if($_SESSION['addbanner3']) file_put_contents("md-files/README_file.md",$sect->banner('three'), FILE_APPEND);
 
 file_put_contents("md-files/README_file.md",$sect->backTotop, FILE_APPEND);
 
+// AFTER APPENDING EACH SECTION, REDIRECT TO RESULTS PAGE
 header("location: results");

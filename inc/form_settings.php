@@ -1,12 +1,12 @@
 <?php
-if(!isset($_SESSION['stat'])) 
+if(!isset($_SESSION['stat']))
 {
     echo '
 <html>
     <head>
         <title>ReadMe Markdown File Generator</title>
         <link rel="icon" href="favicon.ico">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
         <div class="start_head">
@@ -18,9 +18,11 @@ if(!isset($_SESSION['stat']))
 ';
     die();
 }
-/* CREATING THESE SESSIONS IF POST ISSET: */
 
-// POST SELECTIONS FROM INDEX PAGE
+
+/******** CREATING THESE SESSIONS IF POST ISSET: ********/
+
+// $_POST[] FORM OPTIONS SELECTED ON INDEX PAGE
 if(isset($_POST['addbanner1']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['addbanner1'] = true;
 if(isset($_POST['addbanner2']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['addbanner2'] = true;
 if(isset($_POST['addbanner3']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['addbanner3'] = true;
@@ -39,7 +41,7 @@ if(isset($_POST['addoutput-structure']) && $_SERVER['REQUEST_METHOD']=='POST') $
 if(isset($_POST['addsupport']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['addsupport'] = true;
 
 
-// POST SELECTIONS FROM FORM INPUTS
+// $_POST VALUES FROM FORM INPUTS
 if(isset($_POST['github_id']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['github_id'] = $_POST['github_id'];
 if(isset($_POST['github_repo']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['github_repo'] = $_POST['github_repo'];
 if(isset($_POST['project_name']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['project_name'] = $_POST['project_name'];
@@ -57,8 +59,8 @@ if(isset($_POST['credits']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['cr
 if(isset($_POST['related_links']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['related_links'] = $_POST['related_links'];
 if(isset($_POST['connections']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['connections'] = $_POST['connections'];
  
-include 'classes/ReadMe.php';
-include 'classes/Form.php';
+include 'classes/ReadMe.php'; // FILE CONTAINING METHODS FOR WRITING EACH SECTION
+include 'classes/Form.php'; // FILE CONTAINING METHODS FOR FORM INPUTS
 
 $markdown = new ReadMe();
 $form = new Form();
@@ -92,8 +94,6 @@ switch($add)
         $action = "?input=14";
         $back = "?input=12";         
         break;  
-
-
 
     case 12:
         if(isset($_SESSION['credits'])){

@@ -7,7 +7,7 @@ if(!isset($_SESSION['stat']))
     <head>
         <title>ReadMe Markdown File Generator</title>
         <link rel="icon" href="favicon.ico">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
         <div class="start_head">
@@ -24,25 +24,6 @@ if(!isset($_SESSION['stat']))
 /** @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ **/
 
 
-/* CREATING THESE SESSIONS IF POST ISSET: */
-
-// if(isset($_POST['github_id']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['github_id'] = $_POST['github_id'];
-// if(isset($_POST['github_repo']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['github_repo'] = $_POST['github_repo'];
-// if(isset($_POST['project_name']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['project_name'] = $_POST['project_name'];
-// if(isset($_POST['subtitle']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['subtitle'] = $_POST['subtitle'];
-// if(isset($_POST['key_features']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['key_features'] = $_POST['key_features'];
-// if(isset($_POST['about']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['about'] = $_POST['about'];
-// if(isset($_POST['demo']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['demo'] = $_POST['demo'];
-// if(isset($_POST['dependencies']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['dependencies'] = $_POST['dependencies'];
-// if(isset($_POST['installation']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['installation'] = $_POST['installation'];
-// if(isset($_POST['file_tree']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['file_tree'] = $_POST['file_tree'];
-// if(isset($_POST['how_it_works']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['how_it_works'] = $_POST['how_it_works'];
-// if(isset($_POST['support_like_share_donate']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['support_like_share_donate'] = $_POST['support_like_share_donate'];
-// if(isset($_POST['contributions']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['contributions'] = $_POST['contributions'];
-// if(isset($_POST['credits']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['credits'] = $_POST['credits'];
-// if(isset($_POST['related_links']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['related_links'] = $_POST['related_links'];
-// if(isset($_POST['connections']) && $_SERVER['REQUEST_METHOD']=='POST') $_SESSION['connections'] = $_POST['connections'];
- 
 require_once './inc/init.php';
 
 $markdown = new ReadMe();
@@ -96,7 +77,7 @@ switch($add)
             $value = $_SESSION['credits'];
         }else{$value = $markdown->credits;}
         
-        $input = $form->inputArea('Credits', 'Here is where you give credit to any source that helped you in creating this project.', $value,20);
+        $input = $form->inputArea('Credits', 'Here is where you give credit to any source that helped you in creating this project.', $value,10);
 
         
         if(isset($_SESSION['addlinks'])) $action = "?input=13";
@@ -114,7 +95,7 @@ switch($add)
             $value = $_SESSION['contributions'];
         }else{$value = $markdown->contribute;}
         
-        $input = $form->inputArea('Contributions', 'Write instructions for contributing or just use the default created by generator.', $value,14);
+        $input = $form->inputArea('Contributions', 'Write instructions for contributing or just use the default created by generator.', $value,'9');
 
         if(isset($_SESSION['addcredits'])) $action = "?input=12";
         else $action = "?input=13";
@@ -131,7 +112,7 @@ switch($add)
             $value = $_SESSION['support_like_share_donate'] ;
         }else{$value = $markdown->support;}
         
-        $input = $form->inputArea('Support, Like, Share, Donate', 'This is where you paste in support links like Paetreon and like/share buttons and instructions.', $value);
+        $input = $form->inputArea('Support, Like, Share, Donate', 'This is where you paste in support links like Paetreon and like/share buttons and instructions.', $value,18);
 
         if(isset($_SESSION['addcontributions'])) $action = "?input=11";
         else $action = "?input=12";
@@ -147,7 +128,7 @@ switch($add)
             $value = $_SESSION['how_it_works'];
         }else{$value = $markdown->howItWorks;}
         
-        $input = $form->inputArea('How It Works', 'Talk about how it works here.', $value);
+        $input = $form->inputArea('How It Works', 'Talk about how it works here.', $value,8);
 
         if(isset($_SESSION['addsupport'])) $action = "?input=10";
         else $action = "?input=11";
@@ -163,7 +144,7 @@ switch($add)
             $value = $_SESSION['file_tree'];
         }else{$value = $markdown->fileTree;}
 
-        $input = $form->inputArea('File Tree', 'Use the Shell or BASH to generate a file tree and PASTE it here.', $value,'16');
+        $input = $form->inputArea('File Tree', 'Use the Shell or BASH to generate a file tree and PASTE it here.', $value,12);
 
         if(isset($_SESSION['addhow-it-works'])) $action = "?input=9";
         else $action = "?input=10";
@@ -177,7 +158,7 @@ switch($add)
             $value = $_SESSION['about'];
         }else{$value = $markdown->aboutProj; }
 
-        $input = $form->inputArea('About', 'Write in as many words as you want, all about your project _what it is, what it does, and why you created it.', $value,18);
+        $input = $form->inputArea('About', 'Write in as many words as you want, all about your project _what it is, what it does, and why you created it.', $value,5);
 
         if(isset($_SESSION['addoutput-structure'])) $action = "?input=8";
         else $action = "?input=9";
@@ -224,7 +205,7 @@ switch($add)
             $value = $_SESSION['installation'];
         }else{$value = $markdown->installation; }
 
-        $input = $form->inputArea('Installation', 'This is where you give installation instructions. ', $value,15);
+        $input = $form->inputArea('Installation', 'This is where you give installation instructions. ', $value,12);
 
         if(isset($_SESSION['adddependencies'])) $action = "?input=5";
         else $action = "?input=6";
@@ -303,7 +284,7 @@ switch($add)
     <head>
         <title>Form</title>
         <link rel="icon" href="favicon.ico">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
 
@@ -342,7 +323,7 @@ if($_GET['input'] == 14){
 <p style="flex:1"><a href="end_session"><u>Clear Session Cookies</u></a></p>
     </div>
 
-<?php pagelinks() ?>
+<?php //pagelinks() ?>
 
 <script>
 const growers = document.querySelectorAll(".grow-wrap");
@@ -356,6 +337,4 @@ growers.forEach((grower) => {
 </script>    
 
 
-<br><br>
-    </body>
-</html>
+<?php echo wsfooter(); ?>

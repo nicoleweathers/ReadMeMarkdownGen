@@ -29,14 +29,12 @@ echo htmlheader();
 
     <h1 class="redheading" style="text-align:center;padding:50px 10px">Almost There...</h1>
 </div>
-    <div style="margin-top: 25px; padding: 10px 5%;display:flex;flex-direction:column:justify-content:center;width:100%;min-height: calc(100vh - 330px)">
-        <form action="generate" method="POST">
-            <button style="padding: 20px 50px;width:100%;font-size:2.5em" type="submit" name="submit">Generate ReadMe Markdown</button>
-        </form>
-    </div>
 
-
-
+<div style="margin-top: 25px; padding: 10px 5%;display:flex;flex-direction:column:justify-content:center;width:100%;min-height: calc(100vh - 330px)">
+    <form action="generate" method="POST">
+        <button style="padding: 20px 50px;width:100%;font-size:2.5em" type="submit" name="submit">Generate ReadMe Markdown</button>
+    </form>
+</div>
 
 
 <?php echo wsfooter(); ?>
