@@ -7,18 +7,19 @@ This README.md file was generated using web app repository available at github.c
   <img src="md-files/imgs/logo.webp" alt="ReadMe" width="160">
 </p>
 
-<p style="font-family:"Open Sans",sans-serif;letter-spacing:2px;background-image:linear-gradient(45deg,#415ed0 0%,#c850c0 46%,#ffcc70 100%);text-align:center;padding:7px 10px;font-size:3.5em;font-weight:700;color:#fff;margin-bottom:0">ReadMe Markdown Gen<span class="banner1desc">Time Saving  🕐 ReadMe Markdown File Generator</span></p>
+<p align="center" style="font-family:'Open Sans',sans-serif;letter-spacing:2px;background-image:linear-gradient(45deg,#415ed0 0%,#c850c0 46%,#ffcc70 100%);text-align:center;padding:7px 10px;font-size:3.5em;font-weight:700;color:#fff;margin-bottom:0">ReadMe Markdown Gen
+	<span  style="font-size:.4em;font-weight:400;color:#fff;margin-top:0;display:block">Time Saving  🕐 ReadMe Markdown File Generator</span>
+</p>
         
 
-<p align="center" style="font-size:.4em;font-weight:400;color:#fff;margin-top:0;display:block"><strong>⭐ Star us on GitHub — it's easy & it fuels us!</strong></p>
+<p align="center"><strong>⭐ Star us on GitHub — it's easy & it fuels us!</strong></p>
 
-<p class="key_feat"> 
-    <a href="#-key-features">&bull; Key Features</a> &bull; 
+<p align="center"> 
+    <a href="#-key-features">Key Features</a> &bull; 
     <a href="#-about">About</a> &bull; 
     <a href="#-installation">Installation</a> &bull; 
     <a href="#-license">License</a> &bull; 
-    <a href="#-how-it-works">How It Works</a> &bull; 
-    <a href="#-download">Download</a> 
+    <a href="#-how-it-works">How It Works</a>   
 </p>
 
 <p align="center">
@@ -345,7 +346,9 @@ To create this web app, I needed some inspiration, so I searched for good README
   <img src="md-files/imgs/logo.webp" alt="ReadMe" width="160">
 </p>
 
-<p class="banner1">ReadMe Markdown Gen<span class="banner1desc">Time Saving  🕐 ReadMe Markdown File Generator</span></p>
+<p align="center" style="font-family:'Open Sans',sans-serif;letter-spacing:2px;background-image:linear-gradient(45deg,#415ed0 0%,#c850c0 46%,#ffcc70 100%);text-align:center;padding:7px 10px;font-size:3.5em;font-weight:700;color:#fff;margin-bottom:0">ReadMe Markdown Gen
+	<span  style="font-size:.4em;font-weight:400;color:#fff;margin-top:0;display:block">Time Saving  🕐 ReadMe Markdown File Generator</span>
+</p>
         
 
 [( ↑ Back to top ↑ )](#readme-top)
