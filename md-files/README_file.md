@@ -4,7 +4,7 @@ This README.md file was generated using web app repository available at github.c
 
 <p align="center"><img src="imgs/logo.webp" alt="ReadMe" width="160"></p>
 
-<p style="font-family:'Open Sans',sans-serif;letter-spacing:2px;background-image:linear-gradient(45deg,#415ed0 0%,#c850c0 46%,#ffcc70 100%);text-align:center;padding:7px 10px;font-size:3.5em;font-weight:700;color:#fff;margin-bottom:0"> ReadMe Markdown Gen <span style="font-size:.4em;font-weight:400;color:#fff;margin-top:0;display:block"> Time Saving  🕐 ReadMe Markdown File Generator </span></p>
+<p  align="center" style="font-family:'Open Sans',sans-serif;letter-spacing:2px;background-image:linear-gradient(45deg,#415ed0 0%,#c850c0 46%,#ffcc70 100%);text-align:center;padding:7px 10px;font-size:3.5em;font-weight:700;color:#fff;margin-bottom:0"> ReadMe Markdown Gen <span style="font-size:.4em;font-weight:400;color:#fff;margin-top:0;display:block"> Time Saving  🕐 ReadMe Markdown File Generator </span></p>
 
 <p align="center"><strong>⭐ Star us on GitHub — it's easy & it fuels us!</strong></p>
 
@@ -304,7 +304,7 @@ Here are some credits to my inspiration:
 
 <p align="center"><img src="imgs/logo.webp" alt="ReadMe" width="160"></p>
 
-<p style="font-family:'Open Sans',sans-serif;letter-spacing:2px;background-image:linear-gradient(45deg,#415ed0 0%,#c850c0 46%,#ffcc70 100%);text-align:center;padding:7px 10px;font-size:3.5em;font-weight:700;color:#fff;margin-bottom:0"> ReadMe Markdown Gen <span style="font-size:.4em;font-weight:400;color:#fff;margin-top:0;display:block"> Time Saving  🕐 ReadMe Markdown File Generator </span></p>
+<p  align="center" style="font-family:'Open Sans',sans-serif;letter-spacing:2px;background-image:linear-gradient(45deg,#415ed0 0%,#c850c0 46%,#ffcc70 100%);text-align:center;padding:7px 10px;font-size:3.5em;font-weight:700;color:#fff;margin-bottom:0"> ReadMe Markdown Gen <span style="font-size:.4em;font-weight:400;color:#fff;margin-top:0;display:block"> Time Saving  🕐 ReadMe Markdown File Generator </span></p>
 
 [( ↑ Back to top ↑ )](#readme-top)
 
