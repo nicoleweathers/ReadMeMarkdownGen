@@ -1,3 +1,5 @@
+SPECIAL NOTE: This project was released to public on 8-11-2024 and AFTER uploading .MD to Github, I see that it ignores styling. The effect of the banner (without using an image) is via css styling. If you want to use generated banner, open it in your browser and make a snapshot of it. Then replace the code where banner is with the image snapshot. Outside of Github, the CSS style renders a nice looking banner. But inside Github, it ignores the CSS.
+
 In the odd event that you downloaded this from the GitHub repository and you are not a web developer with PHP experience, here is how you use a PHP application:
 
 1. First you need a local server. Xampp is an example of a local server that you can download and install on your computer.
