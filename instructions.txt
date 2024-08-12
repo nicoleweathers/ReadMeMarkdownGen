@@ -1,0 +1,18 @@
+In the odd event that you downloaded this from the GitHub repository and you are not a web developer with PHP experience, here is how you use a PHP application:
+
+1. First you need a local server. Xampp is an example of a local server that you can download and install on your computer.
+
+2. After you have installed the server, you need to start your PHP server (i.e. Apache). This project does not use any databases, so you do not need to start MySQL to run this app.
+
+3. Place the project directory named 'readme-gen' inside your htdocs folder and open it in your browser at:
+http://localhost/readme-gen.
+
+
+$$$$$$$$\ $$\                  $$\  $$\                $$$$$$\ $$\     $$\ 
+\__$$  __|$$ |                 $$ | $  |               \_$$  _|$$ |    $$ |
+   $$ |   $$$$$$$\   $$$$$$\ $$$$$$\\_/ $$$$$$$\         $$ |$$$$$$\   $$ |
+   $$ |   $$  __$$\  \____$$\\_$$  _|  $$  _____|        $$ |\_$$  _|  $$ |
+   $$ |   $$ |  $$ | $$$$$$$ | $$ |    \$$$$$$\          $$ |  $$ |    \__|
+   $$ |   $$ |  $$ |$$  __$$ | $$ |$$\  \____$$\         $$ |  $$ |$$\     
+   $$ |   $$ |  $$ |\$$$$$$$ | \$$$$  |$$$$$$$  |      $$$$$$\ \$$$$  |$$\ 
+   \__|   \__|  \__| \_______|  \____/ \_______/       \______| \____/ \__|
