@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Misc
 .gitignore
 /classes/MyReadMe.php
@@ -11,3 +12,6 @@ launch-day-documentary.mp4
 md-files/README_file2.md
 md-files/README_file3.md
 push-repo-to-github.mp4
+=======
+.gitignore
+>>>>>>> 99a7cdc8e297d9debdf24eee3ddb1fe75a672fd8
