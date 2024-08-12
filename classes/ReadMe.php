@@ -222,13 +222,11 @@ $contacts =
 
         return 
 '
+<p align="center"><img src="imgs/logo.webp" alt="ReadMe" width="160"></p>
 
-<p align="center">
-  <img src="imgs/logo.webp" alt="ReadMe" width="160">
-</p>
+<p style="font-family:\'Open Sans\',sans-serif;letter-spacing:2px;background-image:linear-gradient(45deg,#415ed0 0%,#c850c0 46%,#ffcc70 100%);text-align:center;padding:7px 10px;font-size:3.5em;font-weight:700;color:#fff;margin-bottom:0"> ' . $this->project . ' <span style="font-size:.4em;font-weight:400;color:#fff;margin-top:0;display:block"> ' . $subtitle . ' </span></p>
 
-<p class="banner1">' . $this->project . '<span class="banner1desc">' . $subtitle . '</span></p>
-        ';
+';
     } // end of banner1()
     
     public function banner2()
@@ -238,15 +236,14 @@ $contacts =
         return 
 '
 
-<p align="center">
-  <img src="imgs/logo2.webp" alt="ReadMe" width="160">
-</p>
+<p align="center"><img src="imgs/logo2.webp" alt="ReadMe" width="160"></p>
 
-<div class="banner2">
-<p class="banner2">' . $this->project . ' </p><span class="banner2desc">' . $subtitle . '</span>
+<div style="text-align:center">
+<p style="background-image:linear-gradient(180deg,#4388ff 10%,#8400ad 50%,#c0004d 70%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;padding:7px 10px;font-size:3.5em;margin-bottom:0!important;font-weight:700"> ' . $this->project . ' </p><span style="color:#000;font-weight:700;font-size:1.5em;padding-top:0!important;margin-top:0!important"> ' . $subtitle . ' </span>
 </div>
 
 ---
+
 ';
     } // end of banner2()
 
@@ -256,10 +253,10 @@ $contacts =
         $subtitle = str_replace( '.','', $subtitle );
         return 
 '
-<div class="banner3" style="text-align:center;"><br>
-  <img src="imgs/logo-gold-blk.webp" alt="ReadMe" width="160">
-  <p class="banner3">' . $this->project . '</p>
-  <p class="banner3desc">' . $this->$subtitle . '</p>
+<div style="background:#0e0e0e;padding-bottom:10px;margin-bottom:25px!important;text-align:center;"><br>
+<img src="imgs/logo-gold-blk.webp" alt="ReadMe" width="160">
+<p style="background-image:linear-gradient(to right,#462523 0,#cb9b51 22%,#f6e27a 45%,#f6f2c0 50%,#f6e27a 55%,#cb9b51 78%,#462523 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;padding:7px 10px;font-size:3em;font-weight:400;letter-spacing:3px;text-align:center"> ' . $this->project . ' </p>
+<p style="font-weight:700;font-size:1.5em;background-image:linear-gradient(to right,#462523 0,#cb9b51 22%,#f6e27a 45%,#f6f2c0 50%,#f6e27a 55%,#cb9b51 78%,#462523 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-top:0;text-align:center"> ' . $this->$subtitle . ' </p>
 </div>
 ';
     } // end of banner3()
@@ -268,30 +265,27 @@ $contacts =
     {
         return 
 '
-
 <p align="center"><strong>⭐ Star us on GitHub — it\'s easy & it fuels us!</strong></p>
 
-<p class="key_feat"> 
-    <a href="#-key-features">&bull; Key Features</a>
-    <a href="#-about">About</a>
-    <a href="#-installation">Installation</a>
-    <a href="#-license">License</a>
-    <a href="#-how-it-works">How It Works</a>
-    <a href="#-download">Download</a>
+<p style="padding-bottom:20px;text-align:center"> 
+    <a href="#-key-features">&bull; Key Features</a> &bull;
+    <a href="#-about">About</a> &bull;
+    <a href="#-installation">Installation</a> &bull;
+    <a href="#-license">License</a> &bull;
+    <a href="#-how-it-works">How It Works</a> &bull;
+    <a href="#-download">Download</a> &bull;
 </p>
 
 ';
     } // end of mini_nav()
 public function headtop()
 {
-$txt = "
-<!--------------------------------------------------------------------------------------------------------
+return'<!-----------------------------------------------------------------------------------------------------
 This README.md file was generated using web app repository available at github.com/nicoleweathers/ReadMeGen
----------------------------------------------------------------------------------------------------------->
-";
-$css = $this->css();
+------------------------------------------------------------------------------------------------------->
+';
 
-return $txt . $css;
+ 
 }
 // endof headtop()
 /*********************************/
@@ -606,8 +600,8 @@ $head =
     {
 return 
 '
-<div class="end_cta">
-<p>Liked the work?</p>
+<div style="text-align:center;font-size:1.5em;padding-bottom:20px">
+<p style="font-size:2em;font-weight:600">Liked the work?</p>
 
 ### ⭐ Star us on GitHub — it\'s easy & it fuels us!
 
