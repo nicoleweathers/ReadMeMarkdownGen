@@ -8,7 +8,7 @@ This README.md file was generated using web app repository available at github.c
 
 <p align="center"><strong>⭐ Star us on GitHub — it's easy & it fuels us!</strong></p>
 
-<p style="padding-bottom:20px;text-align:center"> 
+<p  align="center" style="padding-bottom:20px;text-align:center"> 
     <a href="#-key-features">&bull; Key Features</a> &bull;
     <a href="#-about">About</a> &bull;
     <a href="#-installation">Installation</a> &bull;
@@ -295,8 +295,8 @@ Here are some credits to my inspiration:
 
 ---        
         
-<div style="text-align:center;font-size:1.5em;padding-bottom:20px">
-<p style="font-size:2em;font-weight:600">Liked the work?</p>
+<div  align="center" style="text-align:center;font-size:1.5em;padding-bottom:20px">
+<p align="center" style="font-size:2em;font-weight:600">Liked the work?</p>
 
 ### ⭐ Star us on GitHub — it's easy & it fuels us!
 
